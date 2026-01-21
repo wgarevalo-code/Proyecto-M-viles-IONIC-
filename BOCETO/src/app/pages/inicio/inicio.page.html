@@ -1,0 +1,65 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <div class="header-logo">
+      <div class="logo-circle">
+        <h2>En Ruta<br>App</h2>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <div class="vehicle-card">
+          <ion-icon name="bicycle-outline"></ion-icon>
+          <p>Moto</p>
+        </div>
+      </ion-col>
+      <ion-col size="6">
+        <div class="vehicle-card">
+          <ion-icon name="car-sport-outline"></ion-icon>
+          <p>Auto</p>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="menu-container">
+    <ion-button expand="block" class="app-btn" routerLink="/registro">
+      <ion-icon slot="end" name="person-circle-outline"></ion-icon>
+      Iniciar Sesión
+    </ion-button>
+
+    <ion-button expand="block" class="app-btn outline-style" routerLink="/servicios">
+      Servicios
+    </ion-button>
+
+    <ion-button expand="block" class="app-btn outline-style" routerLink="/contactos">
+      Contactos
+    </ion-button>
+
+    <ion-button expand="block" class="app-btn location-btn" routerLink="/ubicacion">
+      Ubicar mi Paquete
+    </ion-button>
+  </div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-segment value="home">
+      <ion-segment-button value="map" routerLink="/ubicacion">
+        <ion-icon name="location-outline"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="home">
+        <ion-icon name="home-outline"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="back">
+        <ion-icon name="arrow-undo-outline"></ion-icon>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-footer>

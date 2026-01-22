@@ -1,21 +1,19 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
     <div class="header-logo">
-      <div class="logo-circle">
-        <h2>En Ruta<br>App</h2>
-      </div>
+      <img src="assets/icon/logo-nuevo.png" alt="Logo En Ruta" class="img-logo">
     </div>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content class="ion-padding content-bg">
   
   <ion-grid>
     <ion-row>
       <ion-col size="6">
-        <div class="vehicle-card">
+        <div class="vehicle-card selected">
           <ion-icon name="bicycle-outline"></ion-icon>
-          <p>Moto</p>
+          <p>Moto 3.0</p>
         </div>
       </ion-col>
       <ion-col size="6">
@@ -28,28 +26,29 @@
   </ion-grid>
 
   <div class="menu-container">
-    <ion-button expand="block" class="app-btn" routerLink="/registro">
-      <ion-icon slot="end" name="person-circle-outline"></ion-icon>
-      Iniciar Sesión
+    
+    <ion-button expand="block" class="app-btn main-action" routerLink="/registro">
+      INICIAR SESIÓN
     </ion-button>
 
     <ion-button expand="block" class="app-btn outline-style" routerLink="/servicios">
-      Servicios
+      SERVICIOS
     </ion-button>
 
     <ion-button expand="block" class="app-btn outline-style" routerLink="/contactos">
-      Contactos
+      CONTACTOS
     </ion-button>
 
-    <ion-button expand="block" class="app-btn location-btn" routerLink="/ubicacion">
-      Ubicar mi Paquete
+    <ion-button expand="block" class="app-btn outline-style location-btn" routerLink="/ubicacion">
+      UBICAR MI PAQUETE
     </ion-button>
+
   </div>
 
 </ion-content>
 
 <ion-footer>
-  <ion-toolbar>
+  <ion-toolbar color="light">
     <ion-segment value="home">
       <ion-segment-button value="map" routerLink="/ubicacion">
         <ion-icon name="location-outline"></ion-icon>

@@ -1,87 +1,104 @@
-/* 1. Estilo del Nuevo Logo */
-.header-logo {
+/* --- 1. FONDO DINÁMICO (ANIMACIÓN) --- */
+.animated-bg {
+  /* Gradiente con los colores de tu marca */
+  background: linear-gradient(-45deg, #0054e9, #4c00e9, #28ba62, #00d4ff);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite; /* El fondo se mueve solo */
+  
+  height: 100%;
+  width: 100%;
   display: flex;
+  align-items: center;
   justify-content: center;
-  padding-top: 30px;
-  padding-bottom: 20px;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* --- 2. CONTENIDO CENTRADO --- */
+.center-content {
+  text-align: center;
+  padding: 30px;
+  width: 100%;
+  max-width: 400px; /* Para que no se estire demasiado en PC */
+  
+  /* Animación de entrada de todo el bloque */
+  animation: slideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* --- 3. LOGO (Flotante) --- */
+.logo-container {
+  background: rgba(255, 255, 255, 0.95); /* Blanco casi puro */
+  border-radius: 50%;
+  width: 140px; /* Un poco más grande para ser protagonista */
+  height: 140px;
+  margin: 0 auto 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  
+  /* Animación de flotar */
+  animation: float-logo 4s ease-in-out infinite;
   
   .img-logo {
-    width: 120px; /* Tamaño del logo */
+    width: 80px;
     height: auto;
-    object-fit: contain;
   }
 }
 
-/* 2. Tarjetas de Moto/Auto */
-.vehicle-card {
-  background: white;
-  border-radius: 15px;
-  padding: 15px;
-  text-align: center;
-  border: 1px solid #e0e0e0;
-  transition: all 0.3s ease;
+/* --- 4. TEXTOS --- */
+.app-title {
+  color: white;
+  font-size: 32px;
+  font-weight: 900;
+  margin: 0;
+  letter-spacing: 1.5px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.app-subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 16px;
+  margin-top: 5px;
+  margin-bottom: 40px;
+  font-weight: 300;
+}
+
+/* --- 5. BOTÓN DE LOGIN --- */
+.login-btn {
+  --background: white;
+  --color: #0054e9; /* Texto azul */
+  --border-radius: 50px; /* Botón redondo moderno */
+  font-weight: 700;
+  font-size: 16px;
+  height: 55px;
+  --box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  margin-bottom: 20px;
+  transition: transform 0.2s;
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.register-link {
+  color: white;
+  font-size: 14px;
+  opacity: 0.8;
   cursor: pointer;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-
-  ion-icon {
-    font-size: 40px;
-    color: #555;
-    margin-bottom: 5px;
-  }
-  p {
-    margin: 0;
-    font-weight: 600;
-    color: #333;
-    font-size: 14px;
-  }
-
-  /* Efecto seleccionado (simulado en Moto) */
-  &.selected {
-    border-color: #28ba62; /* Verde */
-    background-color: #f9fffb;
-    ion-icon { color: #28ba62; }
-  }
 }
 
-/* 3. Estilos de los Botones */
-.menu-container {
-  margin-top: 25px;
-  padding: 0 10px; /* Un poco de margen a los lados */
+/* --- ANIMACIONES KEYFRAMES --- */
+@keyframes float-logo {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
 }
 
-.app-btn {
-  margin-bottom: 15px;
-  height: 50px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  --border-radius: 8px;
-  --box-shadow: none;
-}
-
-/* Botón Azul Principal (Iniciar Sesión) */
-.main-action {
-  --background: #0054e9; /* Azul fuerte como en tu captura */
-  --color: white;
-}
-
-/* Botones con Borde (Servicios, Contactos, Ubicar) */
-.outline-style {
-  --background: #ffffff;
-  --color: #444;
-  border: 1px solid #ccc;
-  border-radius: 8px; /* Borde redondeado manual para el contenedor */
-  
-  /* Truco para quitar el shadow del botón ionic en modo outline */
-  --box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-/* Color especial para el texto de Ubicar Paquete (azulito) */
-.location-btn {
-  --color: #0054e9;
-  border-color: #0054e9;
-}
-
-/* Fondo general */
-.content-bg {
-  --background: #fdfdfd;
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
 }

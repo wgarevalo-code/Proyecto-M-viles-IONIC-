@@ -1,13 +1,63 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>registro</ion-title>
+<ion-header class="ion-no-border">
+  <ion-toolbar class="transparent-toolbar">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/inicio" color="light" icon="chevron-back-outline"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">registro</ion-title>
-    </ion-toolbar>
-  </ion-header>
+
+  <div class="main-container animated-bg">
+    
+    <div class="login-card animate-card">
+      
+      <div class="header-content">
+        <img src="assets/icon/nuevo-logo-flecha.png" alt="Logo" class="mini-logo">
+        <h2>Bienvenido</h2>
+        <p>Ingresa tus credenciales</p>
+      </div>
+
+      <div class="form-group">
+        
+        <div class="input-item">
+          <ion-icon name="person-outline"></ion-icon>
+          <ion-input placeholder="Usuario o Correo" type="text"></ion-input>
+        </div>
+
+        <div class="input-item">
+          <ion-icon name="lock-closed-outline"></ion-icon>
+          <ion-input placeholder="Contraseña" type="password"></ion-input>
+        </div>
+
+        <div class="forgot-text" align="right">
+          <p>¿Olvidaste tu contraseña?</p>
+        </div>
+
+        <ion-button expand="block" class="main-btn">
+          INICIAR SESIÓN
+        </ion-button>
+
+      </div>
+
+      <div class="social-section">
+        <div class="divider"><span>O ingresa con</span></div>
+        
+        <div class="social-buttons">
+          <ion-button fill="clear" class="social-btn google">
+            <ion-icon name="logo-google"></ion-icon>
+          </ion-button>
+          <ion-button fill="clear" class="social-btn facebook">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </ion-button>
+        </div>
+      </div>
+
+      <div class="footer-register">
+        <p>¿No tienes cuenta? <a routerLink="/nuevo-usuario">Regístrate aquí</a></p>
+      </div>
+
+    </div>
+  </div>
+
 </ion-content>

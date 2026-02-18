@@ -7,7 +7,7 @@ export const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'inicio', // <--- AQUÍ CAMBIAMOS para que vaya a Inicio
+    redirectTo: 'inicio',
     pathMatch: 'full',
   },
   {
@@ -15,8 +15,12 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/inicio/inicio.page').then( m => m.InicioPage)
   },
   {
-    path: 'registro',
+    path: 'login', // ✅ NUEVA RUTA PARA INICIAR SESIÓN
     loadComponent: () => import('./pages/registro/registro.page').then( m => m.RegistroPage)
+  },
+  {
+    path: 'registro-usuario',
+    loadComponent: () => import('./pages/registro-usuario/registro-usuario.page').then( m => m.RegistroUsuarioPage)
   },
   {
     path: 'servicios',
@@ -29,9 +33,5 @@ export const routes: Routes = [
   {
     path: 'contactos',
     loadComponent: () => import('./pages/contactos/contactos.page').then( m => m.ContactosPage)
-  },
-  {
-    path: 'registro-usuario',
-    loadComponent: () => import('./pages/registro-usuario/registro-usuario.page').then( m => m.RegistroUsuarioPage)
-  },
+  }
 ];

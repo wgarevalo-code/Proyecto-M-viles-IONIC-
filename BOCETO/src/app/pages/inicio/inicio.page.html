@@ -12,12 +12,21 @@
       <p class="app-subtitle">Tu envío, seguro y a tiempo.</p>
 
       <div class="action-area">
-        <ion-button expand="block" class="login-btn" routerLink="/registro">
+
+        <!-- ✅ CAMBIADO A /login -->
+        <ion-button expand="block" class="login-btn" routerLink="/login">
           INICIAR SESIÓN
           <ion-icon slot="end" name="arrow-forward-outline"></ion-icon>
         </ion-button>
         
-        <p class="register-link">¿No tienes cuenta? <strong>Regístrate aquí</strong></p>
+        <!-- ✅ AHORA NAVEGA A registro-usuario -->
+        <p class="register-link">
+          ¿No tienes cuenta? 
+          <strong routerLink="/registro-usuario" style="cursor:pointer;">
+            Regístrate aquí
+          </strong>
+        </p>
+
       </div>
 
     </div>

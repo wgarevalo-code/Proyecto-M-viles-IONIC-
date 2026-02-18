@@ -1,34 +1,47 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular'; 
-import { RouterModule } from '@angular/router';
-// 1. Importamos las herramientas para los iconos
+import { IonicModule } from '@ionic/angular';
+
 import { addIcons } from 'ionicons';
-import { logoGoogle } from 'ionicons/icons';
+import { mailOutline, lockClosedOutline, personOutline } from 'ionicons/icons';
+
+addIcons({
+  'mail-outline': mailOutline,
+  'lock-closed-outline': lockClosedOutline,
+  'person-outline': personOutline
+});
 
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.page.html',
   styleUrls: ['./registro.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule, RouterModule] 
+  imports: [IonicModule, CommonModule, FormsModule]
 })
-export class RegistroPage implements OnInit {
+export class RegistroPage {
 
-  constructor() {
-    // 2. Registramos el icono de Google para que Ionic lo reconozca
-    addIcons({ logoGoogle });
+  usuario: string = '';
+  password: string = '';
+
+  constructor(private router: Router) {}
+
+  iniciarSesion() {
+
+    const usuarioGuardado = JSON.parse(localStorage.getItem('usuario') || '{}');
+
+    if (
+      this.usuario === usuarioGuardado.usuario &&
+      this.password === usuarioGuardado.password
+    ) {
+
+      localStorage.setItem('sesionActiva', 'true');
+      alert('Inicio de sesión exitoso');
+      this.router.navigate(['/servicios']);
+
+    } else {
+      alert('Usuario o contraseña incorrectos');
+    }
   }
-
-  ngOnInit() {
-  }
-
-  // 3. Agregamos la función que se ejecutará al hacer clic
-  async registroGoogle() {
-    console.log('Botón de Google presionado');
-    // Nota: Aquí irá la lógica de Firebase más adelante
-    alert('Conexión con Google iniciada (falta configurar Firebase)');
-  }
-
 }

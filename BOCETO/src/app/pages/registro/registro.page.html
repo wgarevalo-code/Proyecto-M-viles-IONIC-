@@ -1,69 +1,44 @@
-<ion-header class="ion-no-border">
-  <ion-toolbar class="transparent-toolbar">
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/inicio" color="light" icon="chevron-back-outline"></ion-back-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
+<ion-content fullscreen class="login-bg">
 
-<ion-content [fullscreen]="true">
+  <div class="login-box">
 
-  <div class="main-container animated-bg">
-    
-    <div class="login-card animate-card">
-      
-      <div class="header-content">
-        <img src="assets/icon/nuevo-logo-flecha.png" alt="Logo" class="mini-logo">
-        <h2>Bienvenido</h2>
-        <p>Ingresa tus credenciales</p>
+    <div class="avatar">
+      <ion-icon name="person-outline"></ion-icon>
+    </div>
+
+    <div class="form-box">
+
+      <div class="input-group">
+        <ion-icon name="mail-outline" class="custom-icon"></ion-icon>
+        <input
+          type="text"
+          placeholder="Email ID"
+          [(ngModel)]="usuario">
       </div>
 
-      <div class="form-group">
-        
-        <div class="input-item">
-          <ion-icon name="person-outline"></ion-icon>
-          <ion-input placeholder="Usuario o Correo" type="text"></ion-input>
-        </div>
-
-        <div class="input-item">
-          <ion-icon name="lock-closed-outline"></ion-icon>
-          <ion-input placeholder="Contraseña" type="password"></ion-input>
-        </div>
-
-        <div class="forgot-text" align="right">
-          <p>¿Olvidaste tu contraseña?</p>
-        </div>
-
-        <ion-button expand="block" class="main-btn">
-          INICIAR SESIÓN
-        </ion-button>
-
+      <div class="input-group">
+        <ion-icon name="lock-closed-outline" class="custom-icon"></ion-icon>
+        <input
+          type="password"
+          placeholder="Password"
+          [(ngModel)]="password">
       </div>
 
-      <div class="social-section">
-        <div class="divider"><span>O ingresa con</span></div>
-        
-        <div class="social-buttons">
-          <ion-button fill="clear" class="social-btn google">
-            <ion-icon name="logo-google"></ion-icon>
-          </ion-button>
-          <ion-button fill="clear" class="social-btn facebook">
-            <ion-icon name="logo-facebook"></ion-icon>
-          </ion-button>
-        </div>
+      <div class="options">
+        <label>
+          <input type="checkbox">
+          Remember me
+        </label>
+
+        <span class="forgot">Forgot Password?</span>
       </div>
 
-      <div class="footer-register">
-        <p>¿No tienes cuenta? <a routerLink="/nuevo-usuario">Regístrate aquí</a></p>
-      </div>
+      <button class="btn-login" (click)="iniciarSesion()">
+        LOGIN
+      </button>
 
     </div>
+
   </div>
-<div class="social-auth">
-  <p>O regístrate con</p>
-  <ion-button expand="block" fill="outline" (click)="registroGoogle()" class="google-btn">
-    <ion-icon slot="start" name="logo-google"></ion-icon>
-    Google
-  </ion-button>
-</div>
+
 </ion-content>
